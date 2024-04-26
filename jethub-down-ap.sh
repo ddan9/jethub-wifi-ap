@@ -31,6 +31,8 @@ if [[ $set_full_remove != "true" ]]
 
 		kill $(ps aux | grep -v "grep" | grep "dhcpd" | awk '{print $2};')
 
+		iwconfig $jethub_ap_interface mode managed
+
 	else
 
 		echo "[!] Using full remove..."
@@ -40,6 +42,8 @@ if [[ $set_full_remove != "true" ]]
 		systemctl stop isc-dhcp-server
 
 		kill $(ps aux | grep -v "grep" | grep "dhcpd" | awk '{print $2};')
+
+		iwconfig $jethub_ap_interface mode managed
 
 		ifconfig $jethub_ap_interface down
 
