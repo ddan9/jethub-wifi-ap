@@ -32,8 +32,8 @@
 
 These scripts created for JetHub H1. Scripts makes it able to use AP (Access Point) Wi-Fi mode, that is imposible by default
 
-Target OS: Armbian (but I think it will work on Ubuntu too)
-Target Device: JetHub H1, Fn-Link 6222B-SRC (RTL8822CS), meson64 (aarch64, ARM64)
+- Target OS: Armbian (but I think it will work on Ubuntu too)
+- Target Device: JetHub H1, Fn-Link 6222B-SRC (RTL8822CS), meson64 (aarch64, ARM64)
 
 Please check all these scripts before use them, change credentials (if you want of course)
 After executing this main script it should be able to use secondary scripts: jethub-start-ap.sh and jethub-stop-ap.sh
@@ -115,8 +115,8 @@ jethub-stop-ap --full-remove-interface
 
 Эти скрипты написаны для JetHub H1. Скрипты позволяют использовать его в качестве беспроводной Wi-Fi точки доступа, что невозможно по-умолчанию
 
-Целевая ОС: Armbian (Но думаю и на Ubuntu будет работать)
-Целевое устройство: JetHub H1, Fn-Link 6222B-SRC (RTL8822CS), meson64 (aarch64, ARM64)
+- Целевая ОС: Armbian (Но думаю и на Ubuntu будет работать)
+- Целевое устройство: JetHub H1, Fn-Link 6222B-SRC (RTL8822CS), meson64 (aarch64, ARM64)
 
 Пожалуйста, перед использованием проверьте все скрипты, измените реквизиты (если хотите конечно)
 После выполнения главного скрипта, можно использовать вторичные: jethub-start-ap.sh and jethub-stop-ap.sh
