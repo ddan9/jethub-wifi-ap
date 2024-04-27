@@ -6,7 +6,7 @@
 # Target OS: Armbian, but i think it will work on Ubuntu too
 # Target Device: JetHub H1, Fn-Link 6222B-SRC (RTL8822CS), meson64 (aarch64, ARM64)
 # Please check all this script before use it, change credentials below (if you want of course)
-# After executing this script it should be able to use second script: jethub-setup-ap.sh
+# After executing this script it should be able to use second script: jethub-start-ap.sh
 # You may need to remove or change some lines about disabling services and so on
 #
 
