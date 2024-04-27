@@ -11,6 +11,7 @@
 #
 
 jethub_ap_interface="wlan0"
+jethub_ap_country_code="RU"
 jethub_ap_ssid="JetHub_$(echo $(date) $(lscpu) $(lspci) | md5sum | awk '{print $1};' | cut -c 1-6)"
 jethub_ap_channel="$(echo $((1 + $RANDOM % 12)))"
 jethub_ap_passphrase="$(pwgen -c -n -s -B -1 14)"
@@ -21,6 +22,7 @@ jethub_ap_passphrase="$(pwgen -c -n -s -B -1 14)"
 
 echo ""
 echo "Interface: $jethub_ap_interface"
+echo "Country: $jethub_ap_country_code"
 echo "SSID: $jethub_ap_ssid"
 echo "Channel: $jethub_ap_channel"
 echo "Password: $jethub_ap_passphrase"
@@ -115,7 +117,7 @@ interface=$jethub_ap_interface
 driver=nl80211
 ctrl_interface=/var/run/hostapd.pid
 ctrl_interface_group=0
-country_code=RU
+country_code=$jethub_ap_country_code
 ieee80211d=1
 ieee80211h=1
 ieee80211n=1
