@@ -52,7 +52,7 @@ fi
 
 apt update && apt upgrade -y && apt dist-upgrade -y && apt install -y -f
 
-apt install -y net-tools wireless-tools nmap mc nano iproute2 armbian-firmware-full linux-headers-current-meson64 module-assistant git hostapd isc-dhcp-server build-essential pwgen
+apt install -y net-tools wireless-tools nmap mc nano iproute2 armbian-firmware-full linux-headers-current-meson64 module-assistant git hostapd isc-dhcp-server build-essential pwgen lshw
 
 groupadd -r dhcpd
 useradd -r -g dhcpd dhcpd
