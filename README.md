@@ -41,6 +41,8 @@ After executing this main script it should be able to use secondary scripts: **j
 
 You may need to remove or change some lines about disabling services and so on
 
+**In theory**, scripts are idempotent and can be used at any time during system operation. The result will be the same. However, it is better to use these scripts on clean images and not use the resulting version of the system for copying to other devices, because this violates network security
+
 [🔙 Menu](#Menu)
 
 <br />
@@ -125,6 +127,8 @@ jethub-stop-ap --full-remove-interface
 После выполнения главного скрипта, можно использовать вторичные: **jethub-start-ap.sh** и **jethub-stop-ap.sh**
 
 Вы возможно захотите убрать или изменить некоторые шаги (например про выключение сервисов и типо того)
+
+**По идее** скрипты идемпотентны и их можно использовать в любой момент работы системы. Результат будет тот же. Однако лучше использовать эти скрипты на чистых образах и не использовать полученный вариант системы для копирования на другие устройства, т.к. это нарушает безопасность сети
 
 [🔙 Меню](#Меню)
 
