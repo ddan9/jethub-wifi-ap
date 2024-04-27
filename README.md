@@ -39,6 +39,8 @@ Please check all these scripts before use them, change credentials (if you want 
 After executing this main script it should be able to use secondary scripts: jethub-start-ap.sh and jethub-stop-ap.sh
 You may need to remove or change some lines about disabling services and so on
 
+[🔙 Menu](#Menu)
+
 <br />
 
 #### Installation:
@@ -65,6 +67,8 @@ ln -s /root/.jethub-wifi-ap/jethub-start-ap.sh /usr/sbin/jethub-start-ap
 ln -s /root/.jethub-wifi-ap/jethub-stop-ap.sh /usr/sbin/jethub-stop-ap
 ```
 
+[🔙 Menu](#Menu)
+
 <br />
 
 #### Usage:
@@ -88,6 +92,8 @@ For stop AP with full interface disabling:
 ```bash
 jethub-stop-ap --full-remove-interface
 ```
+
+[🔙 Menu](#Menu)
 
 <br />
 
@@ -116,6 +122,8 @@ jethub-stop-ap --full-remove-interface
 После выполнения главного скрипта, можно использовать вторичные: jethub-start-ap.sh and jethub-stop-ap.sh
 Вы возможно захотите убрать или изменить некоторые шаги (например про выключение сервисов и типо того)
 
+[🔙 Меню](#Меню)
+
 <br />
 
 #### Установка:
@@ -142,6 +150,8 @@ ln -s /root/.jethub-wifi-ap/jethub-start-ap.sh /usr/sbin/jethub-start-ap
 ln -s /root/.jethub-wifi-ap/jethub-stop-ap.sh /usr/sbin/jethub-stop-ap
 ```
 
+[🔙 Меню](#Меню)
+
 <br />
 
 #### Использование:
@@ -165,5 +175,7 @@ jethub-stop-ap
 ```bash
 jethub-stop-ap --full-remove-interface
 ```
+
+[🔙 Меню](#Меню)
 
 <br />
