@@ -10,6 +10,8 @@ rm -rf /var/lib/dhcp/*.leases*
 
 touch /var/lib/dhcp/dhcpd.leases
 
+chown -R dhcpd:dhcpd /var/lib/dhcp/dhcpd.leases
+
 kill $(ps aux | grep -v "grep" | grep "dhcpd" | awk '{print $2};'); sleep 1 && dhcpd -user dhcpd -group dhcpd -4 -cf /etc/dhcp/dhcpd.conf $jethub_ap_interface
 
 sleep 2
