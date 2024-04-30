@@ -10,11 +10,35 @@
 # You may need to remove or change some lines about disabling services and so on
 #
 
+###########################
+# PREINITIALIZE VARIABLES #
+###########################
+
 jethub_ap_interface="wlan0"
 jethub_ap_country_code="RU"
 jethub_ap_ssid="JetHub_$(echo $(date) $(lscpu) $(lspci) | md5sum | awk '{print $1};' | cut -c 1-6)"
 jethub_ap_channel="$(echo $((1 + $RANDOM % 12)))"
 jethub_ap_passphrase="$(pwgen -c -n -s -B -1 14)"
+
+#########################
+# ROOT PRIVILEGES CHECK #
+#########################
+
+if [[ $(id -u) != 0 ]]
+
+	then
+
+		echo ""
+		echo "[!] Please run this script as root or using sudo!"
+		echo ""
+
+		exit
+
+	else
+
+		sleep 0
+
+fi
 
 ##################################
 # DISPLAY CREDENTIALS AND CHOOSE #
@@ -28,7 +52,9 @@ echo "Channel: $jethub_ap_channel"
 echo "Password: $jethub_ap_passphrase"
 echo ""
 
+echo ""
 echo -n "Selected credentials are right? Continue? (y/n): "
+echo ""
 
 read choose
 
@@ -36,13 +62,17 @@ if [[ $choose == "y" ]]
 
 	then
 
-		sleep 5
-
+		echo ""
 		echo "[!] Continuing..."
+		echo ""
+
+		sleep 5
 
 	else
 
+		echo ""
 		echo "[!] Exiting..."
+		echo ""
 
 		exit 0
 
@@ -148,6 +178,7 @@ wpa_passphrase=$jethub_ap_passphrase
 
 echo ""
 echo -n "Do you wish to get, compile and install another Realtek (88x2cs) driver? (y/n): "
+echo ""
 
 read choose
 
@@ -155,9 +186,11 @@ if [[ $choose == "y" ]]
 
 	then
 
-		sleep 5
-
+		echo ""
 		echo "[!] Preparing to compiling..."
+		echo ""
+
+		sleep 5
 
 		cd
 
@@ -185,7 +218,9 @@ if [[ $choose == "y" ]]
 
 	else
 
+		echo ""
 		echo "[!] Continuing without it..."
+		echo ""
 
 		sleep 0
 
@@ -210,6 +245,7 @@ update-initramfs -u
 
 echo ""
 echo -n "All is right? Reboot? (y/n): "
+echo ""
 
 read choose
 
@@ -217,16 +253,24 @@ if [[ $choose == "y" ]]
 
 	then
 
-		sleep 5
-
+		echo ""
 		echo "[!] Continuing..."
+		echo ""
+
+		sleep 5
 
 		reboot
 
 	else
 
+		echo ""
 		echo "[!] Exiting..."
+		echo ""
 
 		exit 0
 
 fi
+
+###########
+# THE END #
+###########
