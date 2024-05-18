@@ -35,7 +35,7 @@ fi
 # MAIN WORKLOAD #
 #################
 
-ifconfig $jethub_ap_interface 192.168.0.1 netmask 255.255.255.0 up
+ifconfig $jethub_ap_interface 192.168.100.1 netmask 255.255.255.0 up
 
 sysctl -w net.ipv4.ip_forward=1
 

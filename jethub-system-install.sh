@@ -117,13 +117,13 @@ max-lease-time 7200;
 authoritative;
 log-facility local7;
 
-subnet 192.168.0.0 netmask 255.255.255.0 {
-	range 192.168.0.10 192.168.0.20;
-	option routers 192.168.0.1;
-	option broadcast-address 192.168.0.255;
+subnet 192.168.100.0 netmask 255.255.255.0 {
+	range 192.168.100.10 192.168.100.20;
+	option routers 192.168.100.1;
+	option broadcast-address 192.168.100.255;
 	option subnet-mask 255.255.255.0;
-	option netbios-name-servers 192.168.0.1;
-	option domain-name-servers 192.168.0.1, 8.8.8.8, 8.8.4.4;
+	option netbios-name-servers 192.168.100.1;
+	option domain-name-servers 192.168.100.1, 8.8.8.8, 8.8.4.4;
 	default-lease-time 600;
 	max-lease-time 7200;
 }

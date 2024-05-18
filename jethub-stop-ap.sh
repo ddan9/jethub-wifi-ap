@@ -64,27 +64,31 @@ if [[ $set_full_remove != "true" ]]
 		echo "[!] Using fast remove..."
 		echo ""
 
-		kill $(ps aux | grep -v "grep" | grep "hostapd" | awk '{print $2};')
-
-		systemctl stop isc-dhcp-server
-
-		kill $(ps aux | grep -v "grep" | grep "dhcpd" | awk '{print $2};')
-
-		iwconfig $jethub_ap_interface mode managed
-
 	else
 
 		echo ""
 		echo "[!] Using full remove..."
 		echo ""
 
-		kill $(ps aux | grep -v "grep" | grep "hostapd" | awk '{print $2};')
+fi
 
-		systemctl stop isc-dhcp-server
+kill $(ps aux | grep -v "grep" | grep "hostapd" | awk '{print $2};')
 
-		kill $(ps aux | grep -v "grep" | grep "dhcpd" | awk '{print $2};')
+systemctl stop isc-dhcp-server
 
-		iwconfig $jethub_ap_interface mode managed
+kill $(ps aux | grep -v "grep" | grep "dhcpd" | awk '{print $2};')
+
+iwconfig $jethub_ap_interface mode managed
+
+ip address flush dev $jethub_ap_interface
+
+if [[ $set_full_remove != "true" ]]
+
+	then
+
+		sleep 0
+
+	else
 
 		ifconfig $jethub_ap_interface down
 
