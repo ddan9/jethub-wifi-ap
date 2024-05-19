@@ -91,6 +91,8 @@ useradd -r -g dhcpd dhcpd
 
 systemctl stop isc-dhcp-server
 systemctl disable isc-dhcp-server
+systemctl stop hostapd
+systemctl disable hostapd
 
 ###########################
 # CONFIGURING DHCP SERVER #
